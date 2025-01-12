@@ -1,0 +1,51 @@
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.post h2 {
+  margin: 0 0 10px;
+}
+
+.post p {
+  margin: 0 0 10px;
+}
+
+.post span {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.post button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+}

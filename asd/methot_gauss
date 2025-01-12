@@ -1,0 +1,41 @@
+def gaussian_elimination_row(matrix):
+    n = len(matrix)
+
+    for i in range(n):
+        # Поиск главного элемента в текущей строке
+        max_element = abs(matrix[i][i])
+        max_index = i
+
+        for j in range(i+1, n):
+            if abs(matrix[j][i]) > max_element:
+                max_element = abs(matrix[j][i])
+                max_index = j
+
+        # Обмен текущей строки с строкой, содержащей главный элемент
+        matrix[i], matrix[max_index] = matrix[max_index], matrix[i]
+
+        # Приведение матрицы к ступенчатому виду
+        for j in range(i+1, n):
+            factor = matrix[j][i] / matrix[i][i]
+
+            for k in range(i, n+1):
+                matrix[j][k] -= factor * matrix[i][k]
+
+    # Обратный ход
+    x = [0] * n
+
+    for i in range(n-1, -1, -1):
+        x[i] = matrix[i][n] / matrix[i][i]
+
+        for j in range(i-1, -1, -1):
+            matrix[j][n] -= matrix[j][i] * x[i]
+
+    return x
+
+# Пример использования
+matrix = [[3, -1, 2, 1],
+          [1, 1, -1, 2],
+          [2, 0, 1, 3]]
+
+result = gaussian_elimination_row(matrix)
+print(result)
